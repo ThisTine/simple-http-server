@@ -1,0 +1,13 @@
+name: App CI Build
+
+on:
+  push:
+    tags:
+      - 'v*' 
+
+jobs:
+  trigger-internal-build:
+    uses: infras/workflow-templates/.gitea/workflows/docker-template.yml@main
+    with:
+      image_name: 'simple-http-server'
+      image_tag: ${{ gitea.ref_name }} 
