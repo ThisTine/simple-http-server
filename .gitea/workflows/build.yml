@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   actions: read
+  packages: write
 
 jobs:
   trigger-internal-build:
