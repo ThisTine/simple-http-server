@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*' 
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   trigger-internal-build:
     uses: infras/workflow-templates/.gitea/workflows/docker-template.yml@main
