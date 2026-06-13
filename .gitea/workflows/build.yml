@@ -12,10 +12,11 @@ permissions:
 
 jobs:
   trigger-internal-build:
-    uses: infras/workflow-templates/.gitea/workflows/docker-template.yml@1745732456bdd9bd41bbec4bb4cf9cff08f650fe
+    uses: infras/workflow-templates/.gitea/workflows/docker-template.yml@47684a2ffa498f4101557efc3acf1ae8a354178f
     with:
       image_name: 'simple-http-server'
       image_owner: thistine
       image_tag: ${{ gitea.ref_name }}
     secrets:
-      REGISTRY_TOKEN: ${{ gitea.token }} 
+      REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
+      REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }} 
